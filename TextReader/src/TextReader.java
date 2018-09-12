@@ -2,8 +2,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.file.*;
 import java.util.stream.*;
 
@@ -46,6 +45,7 @@ public class TextReader extends JFrame {
         JTextArea inputField = new JTextArea();
 
 
+
         //Add text output area
         JTextArea outputArea = new JTextArea(10,30);
         JScrollPane outputScrollPane = new JScrollPane(outputArea);
@@ -56,13 +56,10 @@ public class TextReader extends JFrame {
         analyzeButton.setPreferredSize(new Dimension(10,20));
         analyzeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                outputArea.setText(null);
                 String directory = inputField.getText();
-
-
-
-                outputArea.setText(directory);
-
+                FileAnalyzer fileAnalyzer = new FileAnalyzer(directory);
+                outputArea.setText(fileAnalyzer.getData());
             }
         });
         //Adding stuff to inputPanel
