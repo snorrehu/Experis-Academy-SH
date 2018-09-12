@@ -71,10 +71,13 @@ public class TextReader extends JFrame {
         searchButton.setPreferredSize(new Dimension(10,20));
         searchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                outputArea.setText(null);
                 String word = wordSearchField.getText();
                 System.out.println("Searching in file: " + fileName);
+                //Convert to lowercase to remove case sensitivity
+                word = word.toLowerCase();
                 FileAnalyzer fileAnalyzer = new FileAnalyzer(fileName,word);
-                outputArea.setText("Number of matching words: " + fileAnalyzer.getWordcount());
+                outputArea.setText("Number of matching words: " + fileAnalyzer.getWordCount());
             }
         });
 

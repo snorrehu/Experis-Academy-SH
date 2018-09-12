@@ -1,15 +1,15 @@
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileAnalyzer {
     private String fileName;
     private double fileSize;
     private int numberOfLines;
-    private int wordcount;
+    private int wordCount;
+    String fileString;
+    String[] words;
 
     //Analyze file
     public FileAnalyzer(String directory){
@@ -42,31 +42,51 @@ public class FileAnalyzer {
     }
 
     //Search for words
-    public FileAnalyzer(String directory, String word){
-        Scanner scanner = null;
-        this.wordcount = 0;
-        try {
-            scanner = new Scanner(new File(directory));
-        } catch (IOException e) {
+    public FileAnalyzer(String directory, String searchWord) {
 
+        try {
+
+            BufferedReader textBuffer = new BufferedReader(new FileReader(directory));
+
+            StringBuilder builder = new StringBuilder();
+            String nextLine = textBuffer.readLine();
+
+            while (nextLine != null) {
+                builder.append(nextLine);
+                builder.append(System.lineSeparator());
+                nextLine = textBuffer.readLine();
+            }
+
+            //-------SOMETHING GOES WRONG HERE:------
+            fileString = builder.toString().toLowerCase();
+            words = fileString.split(" \\s+");
+            System.out.print(words);
+            //---------------------------------------
+
+        } catch (FileNotFoundException e) {
+            System.out.println("Couldn't find file");
+            System.exit(0);
+        } catch (IOException e){
+            System.out.println("An I/O Error Occured");
+            System.exit(0);
         }
-        while (scanner.hasNextLine()) {
-            while (scanner.hasNext()){
-                if(word==scanner.next()){
-                    System.out.println("Found it");
-                    wordcount++;
+
+        if(words.length>0){
+            for (String word:words) {
+                if(word==searchWord){
+                    wordCount++;
                 }
             }
         }
+
     }
 
-
-    public String getData(){
-        String output = "Filename: "+ fileName + "\n" + "Number of lines: " + numberOfLines + "\n" + "File size: " + fileSize + "kB" + "\n";
+    public String getData () {
+        String output = "Filename: " + fileName + "\n" + "Number of lines: " + numberOfLines + "\n" + "File size: " + fileSize + "kB" + "\n";
         return output;
     }
 
-    public int getWordcount(){
-        return wordcount;
+    public int getWordCount () {
+        return wordCount;
     }
 }
