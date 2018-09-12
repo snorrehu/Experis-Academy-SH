@@ -57,11 +57,9 @@ public class FileAnalyzer {
                 nextLine = textBuffer.readLine();
             }
 
-            //-------SOMETHING GOES WRONG HERE:------
             fileString = builder.toString().toLowerCase();
-            words = fileString.split(" \\s+");
-            System.out.print(words);
-            //---------------------------------------
+            words = fileString.split("\\W+");
+
 
         } catch (FileNotFoundException e) {
             System.out.println("Couldn't find file");
@@ -73,7 +71,7 @@ public class FileAnalyzer {
 
         if(words.length>0){
             for (String word:words) {
-                if(word==searchWord){
+                if(word.equals(searchWord)){
                     wordCount++;
                 }
             }

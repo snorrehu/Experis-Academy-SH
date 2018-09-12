@@ -45,7 +45,11 @@ public class TextReader extends JFrame {
 
         // Add input area
         JTextArea inputField = new JTextArea();
+        inputField.setText("Enter filename here");
+        inputField.setEditable(true);
         JTextArea wordSearchField = new JTextArea();
+        wordSearchField.setText("Word Search");
+        wordSearchField.setEditable(true);
 
         //Add text output area
         JTextArea outputArea = new JTextArea(10,30);
