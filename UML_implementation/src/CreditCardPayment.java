@@ -1,6 +1,8 @@
 public class CreditCardPayment implements Payment {
     private String amount;
 
+
+
     @Override
     public int calcAmount(int price, int paid) {
         authorize();

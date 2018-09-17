@@ -1,0 +1,58 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Main extends JFrame {
+    private String buttons[] = {"Put your buttons here"};
+
+    Main(){
+        this.setTitle("Snorres GUI Template");
+        this.setSize(300, 400);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setLayout(new BorderLayout());
+
+        //Create button listener
+        ActionListener listener = new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                System.out.println(e.getActionCommand()+" clicked");
+            }
+        };
+
+        //Buttonpanel
+        JPanel buttonPanel = new JPanel();
+        for(String b:buttons){
+            //Create new button
+            JButton button = new JButton(b);
+            //Set action command name for button
+            button.setActionCommand(b);
+            //Add listener
+            button.addActionListener(listener);
+            //Add to panel
+            buttonPanel.add(button);
+
+        }
+
+        //Displaypanel
+        JPanel displayPanel = new JPanel();
+        JTextArea displayArea = new JTextArea();
+        displayArea.setEditable(false);
+        displayPanel.add(displayArea);
+
+
+        this.add(displayPanel, BorderLayout.NORTH);
+        this.add(buttonPanel,BorderLayout.CENTER);
+
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args){
+        new Main();
+    }
+}
+

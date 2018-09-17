@@ -1,3 +1,3 @@
 public interface Payment {
-    int calcAmount(int price,int paid);
+    int calcAmount(Object... args);
 }

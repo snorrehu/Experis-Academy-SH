@@ -1,0 +1,74 @@
+\documentclass[]{article}
+
+%opening
+\title{Class Notes}
+\author{Snorre Hukkelås}
+
+\begin{document}
+
+\maketitle
+
+
+\section{ Week 1: Class One}
+
+\begin{itemize}
+	\item Java is trongly typed:  We have to give a variable a type (compared to simply MyNumber = 42 on for instance Python)
+	\item Don't waste space - Use the smallest type (memorywise) that you can.
+	\item Generally saf to use integer.
+	\item Switch type if you run into overflow problems because the type is too small for the value that is to be stored.
+	\item Floating point numbers always have rounding errors at the end.
+	\item Strings are stored as arrays of characters, and the characters are converted into numbers based on the conversion standard (ASCII for instance).
+	\item Sublime recommended as a text editor!
+	\item javac FILENAME will compile your code.
+	\item java FILENAME will run it
+	\item Public means that anything can access the class.
+	\item Static means that the object is created at once the application starts running.
+	\item public static means that it is always available for everything through the entire code execution.
+\end{itemize}
+
+\subsection{Homework}
+\begin{itemize}
+	\item Write a class that takes a number, squares it and outputs a square of starts (or any other symbol) of that number.
+	\item Takes two numbers and prints a rectangle of the sze of the two numbers, but a square inside of the square.
+\end{itemize}
+
+\section{Class 2}
+\begin{itemize}
+	\item The new-keyword means it runs a constructor for that specific class. If there isn't one, its just going to allocate the memory.
+	\item The principle of least access: Mark everything as private and change it as you need access to it.
+	\item Arraylists double in size by each new element you add to the list.
+	\item Simple calculator app for the end of the week.
+\end{itemize}
+
+\section{Class 3 - Git}
+\begin{itemize}
+	\item .gitignore contains names of files that will be ignored and not uploaded to the server.
+	\item .class files contains bytecode. It gets created by compliling the source code file. 
+	\item Git works out the difference between versions and updates the remote version with the change ONLY. The change gets appended, the entire file is NOT switched out by the updated one on the users computer.
+	\item Git gives the change a name (i.e. change 1), says what is changed and gives the opportunity to enter comments on the change.
+	\item Two people can merge changes as long as theyre not working on the same thing in the project.
+	\item If we push the .class file (hex) as well, the whole file will have to be updated in the repository. This is tu where the file is viewed as a whole. (if you can read it, its good to upload).
+	\item Git CANNOT merge two files that are too different (e.g. images that have been changed by two editors).
+	\item git status checks whats changed
+\end{itemize}
+
+\section{Week 2: Class 5}
+\begin{itemize}
+	\item Read up on API for weather forecasts.
+	\item fontawesome.com great tool for building websites.
+	\item Group task: Take map and place icons on the map based on the API. Work out a list of locations in norway and put them into queery. Make shure API returns the data you expect. Give the API latitude and longitude and the map works out the height for you. 
+	\item Purpose task for week 5-8??
+	\item HTML REALLY old..
+	\item Markup language - you always have opening and closing tabs.
+	\item The DOM: An understanding of the hierarchy of the HTML elements.
+	\item Read up and make yourself familiar with the HTML tags n w3school website. All of them up until IFrame!
+	\item Movie streaming services runs bitcoin mining in the background on the machine of the one's that use the website. Loads javascript onto the machine in the background.
+	\item HTTP: Protocol to communicate frontend-backend.
+	\item Api of fire and ice: A RESTfull api. REST: provides url'n that extends functionality from the page. TASK: Write java that navigates through api to retrieve information that the user want. The user should be able to lookup the different characters of game of thrones. You need to produce requests to a server in order to lookup a character, by using the GET command. he java code needs to be able to interpret the response from the server an decide how to proceed. 
+	\item Most people default to a 404 code, this is wrong, because the correct way will be t redirect to the new directory where the thing that is looked up now exists. 
+	\item Check out official server codes on wikipedia (i.e 404 not found...).
+	\item For all the book that are published by batnam, produce a grid that displays the names on the one side and books on the other. 
+	\item For commenrcial use you have to pay for API key with a certain amount of requests to the server. 
+\end{itemize}
+
+\end{document}
