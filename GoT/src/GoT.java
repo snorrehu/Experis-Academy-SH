@@ -1,8 +1,14 @@
 import netscape.javascript.JSObject;
 
+import java.awt.*;
+import java.lang.reflect.Array;
 import java.net.*;
 import java.io.*;
 import org.json.*;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,18 +22,24 @@ import java.util.Scanner;
 public class GoT{
     public static void main(String[] args) throws Exception {
         //Get user input:
-        //System.out.print("Enter character number: ");
-        //Scanner sc = new Scanner(System.in);
-        //String number = sc.nextLine();
-        //String url = "https://anapioficeandfire.com/api/characters/" + number;
-        //getCharacter(url);
+        System.out.print("Enter character number: ");
+        Scanner sc = new Scanner(System.in);
+        String number = sc.nextLine();
+        String url = "https://anapioficeandfire.com/api/characters/" + number;
+        getCharacter(url);
+        System.out.println("POV Characters in all the books published by Bantam Books:");
         getPov();
     }
 
 
     public static void getPov() {
         String url = "https://anapioficeandfire.com/api/books/";
+
+        //List of relevant books:
         ArrayList<String> books = new ArrayList<>();
+        //List of all characters
+        ArrayList<ArrayList<String>> allCharacters = new ArrayList<>();
+
         StringBuilder stringBuilder = new StringBuilder();
         String line;
         JSONArray jsonArray = null;
@@ -43,7 +55,7 @@ public class GoT{
             jsonArray = new JSONArray(stringBuilder.toString());
 
             for (int i = 0; i < jsonArray.length(); i++) {
-                ArrayList<String> characters = new ArrayList<>();
+                ArrayList<String> povCharactersInBook = new ArrayList<>();
                 JSONObject bookObject = jsonArray.getJSONObject(i);
 
                 if(bookObject.getString("publisher").equals("Bantam Books")){
@@ -53,11 +65,12 @@ public class GoT{
                     for(int x = 0; x < povArray.length(); x++){
                         JSONObject charObject = jsonObjectMaker(povArray.getString(x));
                         //Add character to list
-                        characters.add(charObject.getString("name"));
-                        System.out.println(charObject.getString("name"));
-                        Thread.sleep(100);
+                        povCharactersInBook.add(charObject.getString("name"));
+                        //System.out.println(charObject.getString("name"));
+                        Thread.sleep(50);
                     }
                 }
+                allCharacters.add(povCharactersInBook);
             }
         }catch (IOException e){
             System.out.println(e);
@@ -66,10 +79,27 @@ public class GoT{
         }catch (InterruptedException e){
             System.out.println(e);
         }
+        printPovGrid(books,allCharacters);
+    }
 
+    public static void printPovGrid(ArrayList<String> books, ArrayList<ArrayList<String>> characters){
 
+        ArrayList<String> povStrings = new ArrayList<>();
 
+        for (ArrayList<String> characterList:characters){
+            String povCharacters = "";
+            for(String character:characterList){
+                povCharacters += character + ", ";
+            }
+            povStrings.add(povCharacters);
+        }
+        String leftAlignFormat = "| %-21s | %-300s | %n";
+        System.out.format("+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+%n");
 
+        for (int i = 0; i < books.size(); i++) {
+            System.out.format(leftAlignFormat,books.get(i),povStrings.get(i));
+        }
+        System.out.format("+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+%n");
 
     }
 
@@ -102,7 +132,7 @@ public class GoT{
                     Thread.sleep(100);
                 }
             } else {
-                System.out.println("Good bye.");
+                System.out.println("OK");
             }
         }catch (JSONException e){
             System.out.println(e);
