@@ -73,6 +73,7 @@ public class DatabaseHandler {
         String sqlContacts = null;
         int contactID = 0;
 
+        //Check if phone number or name is entered
         try {
             int num = Integer.parseInt(contactInfo);
         } catch (NumberFormatException e) {
@@ -229,6 +230,79 @@ public class DatabaseHandler {
             System.out.println(e.getMessage());
         }
         return key;
+    }
+
+    //Deleting single elements
+    public void deleteElement(String tableToDeleteFrom, String thingToDelete){
+        String deleteKey = null;
+        if(tableToDeleteFrom.equals("Email_addresses")){
+            deleteKey = "EmailAddress";
+        }
+        else if(tableToDeleteFrom.equals("Street_addresses")){
+            deleteKey = "StreetAddress";
+        }
+        else if(tableToDeleteFrom.equals("Phone_numbers")){
+            deleteKey = "PhoneNumber";
+        }
+        String sql = "DELETE FROM " + tableToDeleteFrom + " WHERE " + deleteKey + " = " + thingToDelete;
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+             pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Delete contact
+    public void deleteContact(int contactID){
+        String sql = "DELETE FROM Contacts  WHERE ContactID = " + contactID;
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        String sql2 = "DELETE FROM Phone_numbers WHERE ContactID = " + contactID;
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql2)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        String sql3 = "DELETE FROM Email_addresses WHERE ContactID = " + contactID;
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql3)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        String sql4 = "DELETE FROM Street_addresses WHERE ContactID = " + contactID;
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql4)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        String sql5 = "DELETE FROM Relations WHERE ContactID_1 = " + contactID + " OR ContactID_2 = " + contactID;
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql5)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
 }

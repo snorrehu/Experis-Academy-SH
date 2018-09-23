@@ -24,13 +24,13 @@ public class Main{
         dbHandler.createNewTable(emailAddressTable);
         dbHandler.createNewTable(streetAddressTable);
         dbHandler.createNewTable(relationsTable);
-
-        //Insert new contact
-        dbHandler.insertNewContact("Snorre Hukkelås", "05.04.1990");
-        dbHandler.insertNewContact("Are Hukkelås", "08.06.1969");
-        dbHandler.insertNewContact("Inge Hukkelås", "23.09.1943");
-        dbHandler.insertNewContact("Heidi Hukkelås", "05.12.1970");
 */
+        //Insert new contact
+        //dbHandler.insertNewContact("Snorre Hukkelås", "05.04.1990");
+        //dbHandler.insertNewContact("Are Hukkelås", "08.06.1969");
+        //dbHandler.insertNewContact("Inge Hukkelås", "23.09.1943");
+        //dbHandler.insertNewContact("Heidi Hukkelås", "05.12.1970");
+
 
 
         //Get contact key
@@ -38,9 +38,16 @@ public class Main{
 
         //Store new info:
         //dbHandler.storeNewInfo("95275778",dbHandler.getContactKey("'Snorre'"),"Private",phoneNumberTable);
+        //dbHandler.storeNewInfo("snorre.hukkelaas@gmail.com",dbHandler.getContactKey("'Snorre'"),"Private",emailAddressTable);
+
+        //Delete single element (remember to put '' around elements except phone numbers)
+        //dbHandler.deleteElement("Email_addresses","'snorre.hukkelaas@gmail.com'");
+
+        //Delete contact and all rows containing the corresponding contact id
+        //dbHandler.deleteContact(dbHandler.getContactKey("'Snorre'"));
 
         //Queery for contact info
-        dbHandler.contactQueery("95275778");
+        //dbHandler.contactQueery("'Snorre'");
 
 
 
