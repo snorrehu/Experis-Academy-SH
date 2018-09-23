@@ -2,9 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b350bc53-c094-4008-9f45-812b55b3b554" name="Default Changelist" comment="Updated XMLReader">
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaSwingTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaSwingTemplate/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/Northwind_small.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/SQLLiteApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/sqlite-jdbc-3.23.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/src/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLLiteApp/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/.idea/SQLsimple.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SQLsimple/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SQLsimple/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SQLsimple/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/libraries/sqlite_jdbc_3_23_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/Northwind_small.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/SQLsimple.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/out/production/SQLsimple/com/company/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/out/production/SQLsimple/com/company/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/sqlite-jdbc-3.23.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/src/com/company/com/company/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SQLsimple/SQLsimple/src/com/company/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/XMLreader/XMLReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/XMLreader/XMLReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XMLReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/XMLreader.iml" beforeDir="false" afterPath="$PROJECT_DIR$/XMLreader.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,16 +82,24 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="341907203">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/XMLReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+            <state relative-caret-position="238">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#XMLReader#0" />
                 <element signature="method#jsonObjectMaker#0;class#XMLReader#0" />
               </folding>
@@ -106,7 +145,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -124,13 +162,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537423419405" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/apache-tomcat-9.0.12/lib/java-json.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537530503936" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/java-json.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -181,16 +220,18 @@
       <workItem from="1537422935195" duration="498000" />
       <workItem from="1537426480647" duration="394000" />
       <workItem from="1537428169379" duration="48000" />
+      <workItem from="1537530181357" duration="341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23790000" />
+    <option name="totallyTimeSpent" value="24131000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26674044" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26992288" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -199,7 +240,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32884097" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -238,19 +279,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java" />
     <entry file="file://$PROJECT_DIR$/src/XMLReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
+        <state relative-caret-position="238">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#XMLReader#0" />
             <element signature="method#jsonObjectMaker#0;class#XMLReader#0" />
           </folding>
@@ -297,7 +331,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>10</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
