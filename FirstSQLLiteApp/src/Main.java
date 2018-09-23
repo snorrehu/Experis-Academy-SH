@@ -4,6 +4,12 @@
 import javax.xml.crypto.Data;
 
 public class Main{
+    public static String contactTable = "Contacts";
+    public static String phoneNumberTable = "Phone_numbers";
+    public static String emailAddressTable = "Email_addresses";
+    public static String streetAddressTable = "Street_addresses";
+    public static String relationsTable = "Relations";
+
     public static void main(String[] args){
         //To interact with database: Create a new DatabaseHandler object, to stuff, destroy object.
 
@@ -13,27 +19,28 @@ public class Main{
         /*
         //Create new tables (if they don't exist already)
 
-        dbHandler.createNewTable("Contacts");
-        dbHandler.createNewTable("Phone_numbers");
-        dbHandler.createNewTable("Email_addresses");
-        dbHandler.createNewTable("Street_addresses");
+        dbHandler.createNewTable(contactTable);
+        dbHandler.createNewTable(phoneNumberTable);
+        dbHandler.createNewTable(emailAddressTable);
+        dbHandler.createNewTable(streetAddressTable);
+        dbHandler.createNewTable(relationsTable);
 
         //Insert new contact
-        dbHandler.insertNewContact("Snorre Hukkelås", "05.04.1990", "Inge Hukkelås", "Agnethe Guldbrandsen");
-        */
+        dbHandler.insertNewContact("Snorre Hukkelås", "05.04.1990");
+        dbHandler.insertNewContact("Are Hukkelås", "08.06.1969");
+        dbHandler.insertNewContact("Inge Hukkelås", "23.09.1943");
+        dbHandler.insertNewContact("Heidi Hukkelås", "05.12.1970");
+*/
+
 
         //Get contact key
         //System.out.println(dbHandler.getContactKey("'Hukkelås'"));
 
-        //Register phone number
-        //dbHandler.storePhoneNumber("97262829",dbHandler.getContactKey("'Hukkelås'"),"Work");
-
-        //Register email address
-        //dbHandler.storeEmailAddress("snorre.hukkelaas@gmail.com",dbHandler.getContactKey("'Snorre'"),"Private");
-        //dbHandler.storeNewInfo("Jølsengata 19",dbHandler.getContactKey("'Hukkelås'"),"Home","Street_addresses");
+        //Store new info:
+        //dbHandler.storeNewInfo("95275778",dbHandler.getContactKey("'Snorre'"),"Private",phoneNumberTable);
 
         //Queery for contact info
-        dbHandler.contactQueery("'Snorre'");
+        dbHandler.contactQueery("95275778");
 
 
 

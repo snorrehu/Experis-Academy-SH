@@ -46,6 +46,15 @@ public class DatabaseHandler {
                     + "FOREIGN KEY (ContactID) REFERENCES Contacts(ContactID)"
                     + ");";
         }
+        else if(tableName.equals("Relations")) {
+            sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ( \n"
+                    + "relationID integer PRIMARY KEY , \n"
+                    + "ContactID_1 integer, \n"
+                    + "ContactID_2 integer , \n"
+                    + "relationType text \n"
+                    + ");";
+        }
+
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmt = conn.createStatement()) {
@@ -58,10 +67,37 @@ public class DatabaseHandler {
         }
     }
 
-    //Queery for contact information
-    public void contactQueery(String contactName){
-        String sqlContacts = "SELECT * FROM Contacts \n"
-                + "WHERE FirstName ="+ contactName + " OR LastName = " + contactName;
+    //Queery for contact information by name
+    public void contactQueery(String contactInfo){
+        boolean numeric = true;
+        String sqlContacts = null;
+        int contactID = 0;
+
+        try {
+            int num = Integer.parseInt(contactInfo);
+        } catch (NumberFormatException e) {
+            numeric = false;
+        }
+
+        if(numeric){
+            String sqlNumbers = "SELECT ContactID FROM Phone_numbers \n"
+                    + "WHERE PhoneNumber = " + contactInfo;
+            try (Connection conn = DriverManager.getConnection(url);
+                 Statement stmt  = conn.createStatement();
+                 ResultSet rs    = stmt.executeQuery(sqlNumbers)){
+                //Get contact id
+                contactID = rs.getInt("ContactID");
+                sqlContacts = "SELECT * FROM Contacts \n"
+                        + "WHERE  ContactID ="+ contactID;
+
+            }catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        else{
+            sqlContacts = "SELECT * FROM Contacts, Phone_numbers \n"
+                    + "WHERE  FirstName ="+ contactInfo + " OR LastName = " + contactInfo;
+        }
 
         try (Connection conn = DriverManager.getConnection(url);
              Statement stmtContacts  = conn.createStatement();
@@ -115,24 +151,16 @@ public class DatabaseHandler {
         }
     }
 
-    //Inserting new contacttest
-    public void insertNewContact(String fullName, String birthDate, String father, String mother) {
+    //Inserting new contact
+    public void insertNewContact(String fullName, String birthDate) {
 
         boolean motherIsRegistered = false;
         boolean fatherIsRegistered = false;
 
         String[] fullNameArray = fullName.split(" ");
-        String[] fatherArray = father.split(" ");
-        String[] motherArray = mother.split(" ");
 
         String firstName = fullNameArray[0];
         String lastName = fullNameArray[1];
-        String fatherFirstName = fatherArray[0];
-        String fatherLastName = fatherArray[1];
-        String motherFirstName = motherArray[0];
-        String motherLastName = motherArray[1];
-
-
 
         String contactTableSql = "INSERT INTO Contacts(firstName,lastName,birthDate) VALUES(?,?,?)";
 
@@ -202,6 +230,5 @@ public class DatabaseHandler {
         }
         return key;
     }
-
 
 }
