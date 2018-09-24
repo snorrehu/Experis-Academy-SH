@@ -1,9 +1,8 @@
+import javax.print.attribute.standard.JobMediaSheetsCompleted;
 import javax.swing.*;
 import javax.swing.border.Border;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class MyGUIForm {
     private JPanel panelMain;
@@ -18,10 +17,15 @@ public class MyGUIForm {
     private JTextField postalCodeTextField;
     private JTextField cityTextField;
     private JTextField userInfoTextField;
-    private JTextField userIDInputTextField;
+    private JTextField userIDToDeleteTextField;
     private JTextField elementToDeleteTextField;
     private JTextField emailUserIDTextField;
     private JTextField userInfoTextField_2;
+    private JTextField addresUserIDTextField;
+    private JTextField addressTypeTextField;
+    private JTextField emailTypeTextFIeld;
+    private JTextField phoneUserIDTextField;
+    private JTextField phoneNumberTypeTextField;
 
     //Text Areas
     private JTextArea outputTextArea;
@@ -32,15 +36,14 @@ public class MyGUIForm {
     private JButton addEmailAddressButton;
     private JButton addPhoneNumberButton;
     private JButton searchForContactButton;
-    private JPanel outputAreaPanel;
     private JButton deleteContactButton;
-    private JButton deleteElementButton;
+    private JButton deleteAddressButton;
     private JButton clearButton;
-    private JTextField emailTypeTextFIeld;
-    private JTextField phoneUserIDTextField;
-    private JTextField phoneNumberTypeTextField;
     private JButton addAddressButton;
-    private JTextField addresUserIDTextField;
+    private JButton deleteEmailAddressButton;
+    private JButton deletePhoneNumberButton;
+    private JPanel outputAreaPanel;
+    private JTextPane outputTextPane;
 
 
     public MyGUIForm(){
@@ -52,17 +55,18 @@ public class MyGUIForm {
         TextPrompt streetAddressPrompt = new TextPrompt("Street Address", streetAddressTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt postalCodePrompt = new TextPrompt("Postal Code", postalCodeTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt cityPrompt = new TextPrompt("City", cityTextField, TextPrompt.Show.FOCUS_LOST);
-        TextPrompt idPrompt = new TextPrompt("User ID", userIDInputTextField, TextPrompt.Show.FOCUS_LOST);
-        TextPrompt deletePromt = new TextPrompt("Element to delete", elementToDeleteTextField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt idPrompt = new TextPrompt("Contact ID", userIDToDeleteTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt emailUserIDPrompt = new TextPrompt("To ID", emailUserIDTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt emailTypePrompt = new TextPrompt("Type (Private/Work etc.)", emailTypeTextFIeld, TextPrompt.Show.FOCUS_LOST);
         TextPrompt phoneNumberTypePrompt = new TextPrompt("Type (Private/Work etc.)", phoneNumberTypeTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt phoneIDPrompt = new TextPrompt("To ID", phoneUserIDTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt addresIDPrompt = new TextPrompt("To ID", addresUserIDTextField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt addressTypePrompt = new TextPrompt("Type (Private/Work etc.)", addressTypeTextField, TextPrompt.Show.FOCUS_LOST);
 
         //Set borders
         userInfoTextField.setBorder(null);
         userInfoTextField_2.setBorder(null);
+
 
         //Create compound border around output area
         Border raisedbevel = BorderFactory.createRaisedBevelBorder();
@@ -71,6 +75,10 @@ public class MyGUIForm {
         compound = BorderFactory.createCompoundBorder(
                 raisedbevel, loweredbevel);
         outputTextArea.setBorder(compound);
+
+
+        //JScrollPane jScrollPane = new JScrollPane(outputTextArea,JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        //outputAreaPanel.add(jScrollPane);
 
         //**********************************Listeners and database interaction******************************************
         DatabaseHandler dbHandler = new DatabaseHandler();
@@ -136,6 +144,74 @@ public class MyGUIForm {
                 String phoneNumberType = phoneNumberTypeTextField.getText();
                 dbHandler.storeNewInfo(phoneNumber,id,phoneNumberType,"Phone_numbers");
                 JOptionPane.showMessageDialog(null, "Phone number added for contact with ID: " + id);
+            }
+        });
+
+        //Add address
+        addAddressButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id = Integer.parseInt(addresUserIDTextField.getText());
+                String streetAddress = streetAddressTextField.getText();
+                String addressType = addressTypeTextField.getText();
+                String postalCode = postalCodeTextField.getText();
+                String city = cityTextField.getText();
+                dbHandler.storeNewAddress(streetAddress,id,addressType,postalCode,city);
+                JOptionPane.showMessageDialog(null, "Address added for contact with ID: " + id);
+            }
+        });
+
+        //Delete contact
+        deleteContactButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id = Integer.parseInt(userIDToDeleteTextField.getText());
+                dbHandler.deleteContact(id);
+                JOptionPane.showMessageDialog(null, "All records of contact with ID: " + id + " has been deleted.");
+            }
+        });
+
+        //Delete email address
+        deleteEmailAddressButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String emailAddress = emailTextField.getText();
+                int id = Integer.parseInt(emailUserIDTextField.getText());
+                dbHandler.deleteElement("Email_addresses","'"+emailAddress+"'",id);
+                JOptionPane.showMessageDialog(null, "Email address: " + emailAddress + " has been deleted.");
+            }
+        });
+
+        //Delete phone number
+        deletePhoneNumberButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String phoneNumber = phoneNumberTextField.getText();
+                int id = Integer.parseInt(phoneUserIDTextField.getText());
+                dbHandler.deleteElement("Phone_numbers",phoneNumber,id);
+                JOptionPane.showMessageDialog(null, "Phone number: " + phoneNumber + " for Contact ID: "+id+ " has been deleted.");
+            }
+        });
+
+        //Delete address
+        deleteAddressButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String input = elementToDeleteTextField.getText();
+            }
+        });
+        deleteAddressButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String streetAddress = "'" + streetAddressTextField.getText() + "'";
+                String postalCode = "'" + postalCodeTextField.getText() + "'";
+                String city = "'" + cityTextField.getText() + "'";
+                int id = Integer.parseInt(addresUserIDTextField.getText());
+                dbHandler.deleteAddress(streetAddress,postalCode,city,id);
+                JOptionPane.showMessageDialog(null, "Address: '"
+                        + streetAddressTextField.getText() + " " + postalCodeTextField.getText()
+                        + " " + cityTextField.getText()
+                        + "'  deleted for Contact ID: "+id+ " has been deleted.");
             }
         });
     }

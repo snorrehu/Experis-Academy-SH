@@ -1,4 +1,5 @@
 import javax.xml.crypto.Data;
+import java.awt.event.ActionEvent;
 import java.sql.*;
 
 public class DatabaseHandler {
@@ -39,7 +40,9 @@ public class DatabaseHandler {
         else if(tableName.equals("Street_addresses")) {
             sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ( \n"
                     + "addressID integer PRIMARY KEY , \n"
-                    + "StreetAddresses text, \n"
+                    + "StreetAddress text, \n"
+                    + "PostalCode text, \n"
+                    + "City text, \n"
                     + "ContactID integer , \n"
                     + "infoType text, \n"
                     //Link tables together
@@ -146,7 +149,8 @@ public class DatabaseHandler {
                 //Print all email addresses registered to contact
                 stringBuilder.append("Street addresses:\n");
                 while (rsAddresses.next()) {
-                    stringBuilder.append(rsAddresses.getString("StreetAddresses") + "\t(" + rsAddresses.getString("infoType") + ")\n");
+                    stringBuilder.append(rsAddresses.getString("StreetAddress") + "\t(" + rsAddresses.getString("infoType") + ")\n"
+                    + rsAddresses.getString("PostalCode") + " " + rsAddresses.getString("City")  + "\n");
                 }
 
                 stringBuilder.append("\n");
@@ -191,14 +195,11 @@ public class DatabaseHandler {
     //Inserting new info into table:
     public void storeNewInfo(String infoString, int contactKey, String infoType, String table) {
         String columnString = null;
-        if(table.equals("Street_addresses")){
-            columnString = "StreetAddresses";
+        if(table.equals("Phone_numbers")){
+            columnString = "PhoneNumber";
         }
         else if (table.equals("Email_addresses")){
             columnString = "EmailAddress";
-        }
-        else if (table.equals("Phone_numbers")){
-            columnString = "PhoneNumber";
         }
         String tableSql = "INSERT INTO " + table + "(" + columnString +",ContactID,infoType) VALUES(?,?,?)";
 
@@ -209,6 +210,27 @@ public class DatabaseHandler {
             pstmt.setString(1, infoString);
             pstmt.setInt(2, contactKey);
             pstmt.setString(3, infoType);
+
+            //Execute the table updates
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    //Inserting new info into table:
+    public void storeNewAddress(String address, int contactKey, String addressType, String postalCode, String city) {
+        String tableSql = "INSERT INTO " + "Street_addresses(StreetAddress,PostalCode,City,ContactID,infoType) VALUES(?,?,?,?,?)";
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(tableSql)) {
+
+            //Prepare the number table statement:
+            pstmt.setString(1, address);
+            pstmt.setString(2,postalCode );
+            pstmt.setString(3, city);
+            pstmt.setInt(4, contactKey);
+            pstmt.setString(5, addressType);
 
             //Execute the table updates
             pstmt.executeUpdate();
@@ -240,22 +262,32 @@ public class DatabaseHandler {
     }
 
     //Deleting single elements
-    public void deleteElement(String tableToDeleteFrom, String thingToDelete){
+    public void deleteElement(String tableToDeleteFrom, String thingToDelete, int id){
         String deleteKey = null;
         if(tableToDeleteFrom.equals("Email_addresses")){
             deleteKey = "EmailAddress";
         }
-        else if(tableToDeleteFrom.equals("Street_addresses")){
-            deleteKey = "StreetAddress";
-        }
         else if(tableToDeleteFrom.equals("Phone_numbers")){
             deleteKey = "PhoneNumber";
         }
-        String sql = "DELETE FROM " + tableToDeleteFrom + " WHERE " + deleteKey + " = " + thingToDelete;
+        String sql = "DELETE FROM " + tableToDeleteFrom + " WHERE " + deleteKey + " = " + thingToDelete + " AND ContactID = " + id;
 
         try (Connection conn = DriverManager.getConnection(url);
              PreparedStatement pstmt = conn.prepareStatement(sql)){
              pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void deleteAddress(String streetAddress, String postalCode, String city, int id){
+
+        String sql = "DELETE FROM Street_addresses WHERE StreetAddress =  "+streetAddress+" AND postalCode = " + postalCode + " AND City = " + city + " AND ContactID = " + id;
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.executeUpdate();
 
         }catch(SQLException e) {
             System.out.println(e.getMessage());
@@ -311,5 +343,8 @@ public class DatabaseHandler {
         }
 
     }
+
+    //Delete address
+
 
 }

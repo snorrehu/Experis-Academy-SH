@@ -16,9 +16,9 @@ public class Main extends MyGUIForm{
         //To interact with database: Create a new DatabaseHandler object, to stuff, destroy object.
 
         //Create handler object for the database:
-        //DatabaseHandler dbHandler = new DatabaseHandler();
+        DatabaseHandler dbHandler = new DatabaseHandler();
 
-        /*
+
         //Create new tables (if they don't exist already)
 
         dbHandler.createNewTable(contactTable);
@@ -26,7 +26,7 @@ public class Main extends MyGUIForm{
         dbHandler.createNewTable(emailAddressTable);
         dbHandler.createNewTable(streetAddressTable);
         dbHandler.createNewTable(relationsTable);
-*/
+
         //Insert new contact
         //dbHandler.insertNewContact("Snorre Hukkelås", "05.04.1990");
         //dbHandler.insertNewContact("Are Hukkelås", "08.06.1969");
@@ -55,7 +55,7 @@ public class Main extends MyGUIForm{
         JFrame frame = new JFrame("Contact Book");
         frame.setContentPane(new MyGUIForm().getPanelMain());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(690, 500));
+        frame.setPreferredSize(new Dimension(1000, 500));
         frame.pack();
         frame.setVisible(true);
     }
