@@ -16,7 +16,7 @@ public class Main extends MyGUIForm{
         //To interact with database: Create a new DatabaseHandler object, to stuff, destroy object.
 
         //Create handler object for the database:
-        DatabaseHandler dbHandler = new DatabaseHandler();
+        //DatabaseHandler dbHandler = new DatabaseHandler();
 
         /*
         //Create new tables (if they don't exist already)

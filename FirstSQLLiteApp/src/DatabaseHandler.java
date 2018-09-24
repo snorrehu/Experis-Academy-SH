@@ -68,7 +68,9 @@ public class DatabaseHandler {
     }
 
     //Queery for contact information by name
-    public void contactQueery(String contactInfo){
+    public String contactQueery(String contactInfo){
+        StringBuilder stringBuilder = new StringBuilder();
+        String searchOutputString = null;
         boolean numeric = true;
         String sqlContacts = null;
         int contactID = 0;
@@ -125,31 +127,36 @@ public class DatabaseHandler {
                 ResultSet rsAddresses = stmtAddresses.executeQuery(sqlAddresses);
 
                 //Print info from Contacts table
-                System.out.println("ContactID: " + rsContacts.getInt("ContactID") +  "\n" +
+                stringBuilder.append("ContactID: " + rsContacts.getInt("ContactID") +  "\n" +
                         "Name: " + rsContacts.getString("FirstName") + " " + rsContacts.getString("LastName") + "\n" +
-                        "Birth Date: " + rsContacts.getString("BirthDate") );
+                        "Birth Date: " + rsContacts.getString("BirthDate") + "\n" );
 
                 //Print all numbers registered to contact
-                System.out.println("Phone numbers:");
+                stringBuilder.append("Phone numbers:\n");
                 while (rsNumbers.next()) {
-                    System.out.println(rsNumbers.getString("PhoneNumber") + "\t(" + rsNumbers.getString("infoType") + ")");
+                    stringBuilder.append(rsNumbers.getString("PhoneNumber") + "\t(" + rsNumbers.getString("infoType") + ")\n");
                 }
 
                 //Print all email addresses registered to contact
-                System.out.println("Email addresses:");
+                stringBuilder.append("Email addresses:\n");
                 while (rsEmails.next()) {
-                    System.out.println(rsEmails.getString("EmailAddress") + "\t(" + rsEmails.getString("infoType") + ")");
+                    stringBuilder.append(rsEmails.getString("EmailAddress") + "\t(" + rsEmails.getString("infoType") + ")\n");
                 }
 
                 //Print all email addresses registered to contact
-                System.out.println("Street addresses:");
+                stringBuilder.append("Street addresses:\n");
                 while (rsAddresses.next()) {
-                    System.out.println(rsAddresses.getString("StreetAddresses") + "\t(" + rsAddresses.getString("infoType") + ")");
+                    stringBuilder.append(rsAddresses.getString("StreetAddresses") + "\t(" + rsAddresses.getString("infoType") + ")\n");
                 }
+
+                stringBuilder.append("\n");
+                searchOutputString = stringBuilder.toString();
+
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        return searchOutputString;
     }
 
     //Inserting new contact
