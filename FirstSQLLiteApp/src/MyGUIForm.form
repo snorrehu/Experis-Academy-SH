@@ -147,7 +147,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <text value="Search by entering first name, last name or phone number."/>
+          <text value="Search by entering first name, last name or phone number above."/>
         </properties>
       </component>
       <grid id="fa592" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

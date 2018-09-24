@@ -3,7 +3,15 @@ import java.awt.event.ActionEvent;
 import java.sql.*;
 
 public class DatabaseHandler {
-    private static String url = "jdbc:sqlite:C:/Users/snorr/IdeaProjects/Experis-Academy-SH/FirstSQLLiteApp/Contacts.sqlite";
+    //"jdbc:sqlite:C:/Users/snorr/IdeaProjects/Experis-Academy-SH/FirstSQLLiteApp/Contacts.sqlite"
+
+    private static String url = null;
+
+    DatabaseHandler(){
+        String cwd = System.getProperty("user.dir");
+        System.out.println("Current working directory : " + cwd);
+        url = "jdbc:sqlite:" + cwd +"/Contacts.sqlite";
+    }
 
     //Create tables
     public static void createNewTable(String tableName) {
@@ -129,6 +137,12 @@ public class DatabaseHandler {
                 Statement stmtAddresses = conn.createStatement();
                 ResultSet rsAddresses = stmtAddresses.executeQuery(sqlAddresses);
 
+                //Get every relation stored for each contact:
+                String sqlRelations = "SELECT * FROM Relations \n"
+                        + "WHERE ContactID_2 = " + rsContacts.getString("ContactID");
+                Statement stmtRelations = conn.createStatement();
+                ResultSet rsRelations = stmtRelations.executeQuery(sqlRelations);
+
                 //Print info from Contacts table
                 stringBuilder.append("ContactID: " + rsContacts.getInt("ContactID") +  "\n" +
                         "Name: " + rsContacts.getString("FirstName") + " " + rsContacts.getString("LastName") + "\n" +
@@ -151,6 +165,12 @@ public class DatabaseHandler {
                 while (rsAddresses.next()) {
                     stringBuilder.append(rsAddresses.getString("StreetAddress") + "\t(" + rsAddresses.getString("infoType") + ")\n"
                     + rsAddresses.getString("PostalCode") + " " + rsAddresses.getString("City")  + "\n");
+                }
+
+                //Print relations data
+                stringBuilder.append("Relations: \n");
+                while (rsRelations.next()) {
+                    stringBuilder.append(getContactFullName(Integer.parseInt(rsRelations.getString("ContactID_1")))+ " is this persons' " + rsRelations.getString("relationType") + ".\n");
                 }
 
                 stringBuilder.append("\n");
@@ -261,6 +281,27 @@ public class DatabaseHandler {
         return key;
     }
 
+    //Get ContactID
+    public String getContactFullName(int id){
+        String fullName = null;
+
+        String keyQueeryString =
+                "SELECT * FROM Contacts \n"
+                        + "WHERE ContactID ="+ id;
+
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt  = conn.createStatement();
+             ResultSet rs    = stmt.executeQuery(keyQueeryString)){
+
+            //Get the name
+            fullName = rs.getString("FirstName") + " " + rs.getString("LastName");
+
+        }catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return fullName;
+    }
+
     //Deleting single elements
     public void deleteElement(String tableToDeleteFrom, String thingToDelete, int id){
         String deleteKey = null;
@@ -347,18 +388,37 @@ public class DatabaseHandler {
 
     //Add relations
     public void addRelation(int id_1, int id_2, String relation){
-        String tableSql = "INSERT INTO " + "Relations(ContactID_1,ContactID_2,relationType) VALUES(?,?,?)";
+        String reversedOrderRelation = null;
+        if(relation.equals("child")){
+            reversedOrderRelation = "parent";
+        }
+        else if(relation.equals("parent")){
+            reversedOrderRelation = "child";
+        }
+        else if(relation.equals("sibling")){
+            reversedOrderRelation = "sibling";
+        }
 
+        String tableSql_1 = "INSERT INTO " + "Relations(ContactID_1,ContactID_2,relationType) VALUES(?,?,?)";
+
+        String tableSql_2 = "INSERT INTO " + "Relations(ContactID_1,ContactID_2,relationType) VALUES(?,?,?)";
         try (Connection conn = DriverManager.getConnection(url);
-             PreparedStatement pstmt = conn.prepareStatement(tableSql)) {
+             PreparedStatement pstmt1 = conn.prepareStatement(tableSql_1);
+             PreparedStatement pstmt2 = conn.prepareStatement(tableSql_2)) {
 
-            //Prepare the number table statement:
-            pstmt.setInt(1, id_1);
-            pstmt.setInt(2,id_2);
-            pstmt.setString(3, relation);
+            //Prepare the first number table statement:
+            pstmt1.setInt(1, id_1);
+            pstmt1.setInt(2,id_2);
+            pstmt1.setString(3, relation);
+
+            //Prepare the second number table statement:
+            pstmt2.setInt(1, id_2);
+            pstmt2.setInt(2,id_1);
+            pstmt2.setString(3, reversedOrderRelation);
 
             //Execute the table updates
-            pstmt.executeUpdate();
+            pstmt1.executeUpdate();
+            pstmt2.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -366,12 +426,15 @@ public class DatabaseHandler {
     }
 
     //Delete relations
-    public void deleteRelation(int id_1, int id_2, String relation){
-        String sql = "DELETE FROM Relations WHERE ContactID_1 =  "+id_1+" AND ContactID_2 = " + id_2 + " AND relationType = " + relation;
+    public void deleteRelation(int id_1, int id_2){
+        String sql_1 = "DELETE FROM Relations WHERE ContactID_1 =  "+id_1+" AND ContactID_2 = " + id_2 ;
+        String sql_2 = "DELETE FROM Relations WHERE ContactID_1 =  "+id_2+" AND ContactID_2 = " + id_1 ;
 
         try (Connection conn = DriverManager.getConnection(url);
-             PreparedStatement pstmt = conn.prepareStatement(sql)){
-            pstmt.executeUpdate();
+             PreparedStatement pstmt1 = conn.prepareStatement(sql_1);
+             PreparedStatement pstmt2 = conn.prepareStatement(sql_2)){
+            pstmt1.executeUpdate();
+            pstmt2.executeUpdate();
 
         }catch(SQLException e) {
             System.out.println(e.getMessage());

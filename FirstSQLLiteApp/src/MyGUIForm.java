@@ -1,8 +1,11 @@
+import org.w3c.dom.events.EventException;
+
 import javax.print.attribute.standard.JobMediaSheetsCompleted;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class MyGUIForm {
     private JPanel panelMain;
@@ -72,7 +75,7 @@ public class MyGUIForm {
         TextPrompt addressTypePrompt = new TextPrompt("Type (Private/Work etc.)", addressTypeTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt contact1Propmt = new TextPrompt("Contact ID", relationID_1_textField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt contact2Propmt = new TextPrompt("Contact ID", relationID_2_textField, TextPrompt.Show.FOCUS_LOST);
-        TextPrompt contact3Propmt = new TextPrompt("Relation", relationTypeTextField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt contact3Propmt = new TextPrompt("Relation (parent/child/sibling)", relationTypeTextField, TextPrompt.Show.FOCUS_LOST);
 
         //Set borders
         userInfoTextField.setBorder(null);
@@ -101,11 +104,20 @@ public class MyGUIForm {
         newContactButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String firstName = firstNameTextField.getText();
-                String lastName = lastNameTextField.getText();
-                String birthDate = birthDateTextField.getText();
-                dbHandler.insertNewContact(firstName + " " + lastName, birthDate);
-                JOptionPane.showMessageDialog(null, "Contact added!");
+                try {
+                    String firstName = firstNameTextField.getText();
+                    String lastName = lastNameTextField.getText();
+                    String birthDate = birthDateTextField.getText();
+                    dbHandler.insertNewContact(firstName + " " + lastName, birthDate);
+                    JOptionPane.showMessageDialog(null, "Contact added!");
+
+                }catch (ArrayIndexOutOfBoundsException ev){
+                    System.out.println(ev.getMessage());
+                    JOptionPane.showMessageDialog(null, "Please enter all three fields!");
+                }
+
+
+
             }
         });
 
@@ -242,8 +254,7 @@ public class MyGUIForm {
             public void actionPerformed(ActionEvent e) {
                 int id_1 = Integer.parseInt(relationID_1_textField.getText());
                 int id_2 = Integer.parseInt(relationID_2_textField.getText());
-                String relation = relationTypeTextField.getText();
-                dbHandler.deleteRelation(id_1,id_2,relation);
+                dbHandler.deleteRelation(id_1,id_2);
                 JOptionPane.showMessageDialog(null, "Relation deleted!");
             }
         });

@@ -4,6 +4,7 @@
 import javax.swing.*;
 import javax.xml.crypto.Data;
 import java.awt.*;
+import java.io.File;
 
 public class Main extends MyGUIForm{
     public static String contactTable = "Contacts";
@@ -13,8 +14,6 @@ public class Main extends MyGUIForm{
     public static String relationsTable = "Relations";
 
     public static void main(String[] args){
-        //To interact with database: Create a new DatabaseHandler object, to stuff, destroy object.
-
         //Create handler object for the database:
         DatabaseHandler dbHandler = new DatabaseHandler();
 
