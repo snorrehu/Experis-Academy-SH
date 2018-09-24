@@ -96,7 +96,7 @@ public class DatabaseHandler {
             }
         }
         else{
-            sqlContacts = "SELECT * FROM Contacts, Phone_numbers \n"
+            sqlContacts = "SELECT * FROM Contacts \n"
                     + "WHERE  FirstName ="+ contactInfo + " OR LastName = " + contactInfo;
         }
 

@@ -1,9 +1,11 @@
 //package net.sqlitetutorial;
 
 
+import javax.swing.*;
 import javax.xml.crypto.Data;
+import java.awt.*;
 
-public class Main{
+public class Main extends MyGUIForm{
     public static String contactTable = "Contacts";
     public static String phoneNumberTable = "Phone_numbers";
     public static String emailAddressTable = "Email_addresses";
@@ -49,9 +51,12 @@ public class Main{
         //Queery for contact info
         //dbHandler.contactQueery("'Snorre'");
 
-
-
-
-
+        //***********************************************GUI************************************************************
+        JFrame frame = new JFrame("Contact Book");
+        frame.setContentPane(new MyGUIForm().getPanelMain());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(600, 430));
+        frame.pack();
+        frame.setVisible(true);
     }
 }
