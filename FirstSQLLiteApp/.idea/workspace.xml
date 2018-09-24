@@ -63,12 +63,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="7147" />
+          <entry key="java" value="7872" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="7147" />
+          <entry key="JAVA" value="7872" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -91,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="263">
-              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+              <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,27 +102,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="281" column="5" lean-forward="true" selection-start-line="281" selection-start-column="5" selection-end-line="281" selection-end-column="5" />
+            <state relative-caret-position="297">
+              <caret line="367" column="22" selection-start-line="367" selection-start-column="22" selection-end-line="367" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#createNewTable#0;class#DatabaseHandler#0" />
+                <element signature="n#IF#0" />
+                <element signature="n#IF#0" />
+                <element signature="n#IF#0" />
+                <element signature="n#IF#0" />
                 <element signature="method#contactQueery#0;class#DatabaseHandler#0" />
                 <element signature="method#insertNewContact#0;class#DatabaseHandler#0" />
                 <element signature="method#storeNewInfo#0;class#DatabaseHandler#0" />
                 <element signature="method#storeNewAddress#0;class#DatabaseHandler#0" />
                 <element signature="method#getContactKey#0;class#DatabaseHandler#0" />
+                <element signature="method#deleteElement#0;class#DatabaseHandler#0" />
                 <element signature="method#deleteContact#0;class#DatabaseHandler#0" />
+                <element signature="method#deleteAddress#0;class#DatabaseHandler#0" />
+                <element signature="method#addRelation#0;class#DatabaseHandler#0" />
+                <element signature="method#deleteRelation#0;class#DatabaseHandler#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyGUIForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+            <state relative-caret-position="170">
+              <caret line="236" column="11" lean-forward="true" selection-start-line="236" selection-start-column="11" selection-end-line="236" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#3986:4454" />
@@ -136,10 +144,9 @@
                 <element signature="class#7527:7665" />
                 <element signature="class#8156:8294" />
                 <element signature="class#8581:8719" />
-                <element signature="class#8876:9064" />
-                <element signature="e#9467#9468#0" expanded="true" />
-                <element signature="e#9548#9549#0" expanded="true" />
                 <element signature="class#9125:9263" />
+                <element signature="class#11298:11436" />
+                <element signature="class#11649:11787" />
                 <element signature="e#10463#10464#0" expanded="true" />
                 <element signature="e#10495#10496#0" expanded="true" />
               </folding>
@@ -147,7 +154,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyGUIForm.form">
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
@@ -176,9 +183,9 @@
         <option value="$PROJECT_DIR$/src/Contact.java" />
         <option value="$PROJECT_DIR$/src/TextPrompt.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/MyGUIForm.form" />
         <option value="$PROJECT_DIR$/src/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/src/MyGUIForm.java" />
-        <option value="$PROJECT_DIR$/src/MyGUIForm.form" />
       </list>
     </option>
   </component>
@@ -229,7 +236,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537799166327" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537801233906" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -279,12 +286,12 @@
       <workItem from="1537706092447" duration="9815000" />
       <workItem from="1537716195802" duration="429000" />
       <workItem from="1537716796319" duration="8524000" />
-      <workItem from="1537732739520" duration="25127000" />
+      <workItem from="1537732739520" duration="26986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69100000" />
+    <option name="totallyTimeSpent" value="70959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -404,34 +411,45 @@
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyGUIForm.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="281" column="5" lean-forward="true" selection-start-line="281" selection-start-column="5" selection-end-line="281" selection-end-column="5" />
+        <state relative-caret-position="297">
+          <caret line="367" column="22" selection-start-line="367" selection-start-column="22" selection-end-line="367" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#createNewTable#0;class#DatabaseHandler#0" />
+            <element signature="n#IF#0" />
+            <element signature="n#IF#0" />
+            <element signature="n#IF#0" />
+            <element signature="n#IF#0" />
             <element signature="method#contactQueery#0;class#DatabaseHandler#0" />
             <element signature="method#insertNewContact#0;class#DatabaseHandler#0" />
             <element signature="method#storeNewInfo#0;class#DatabaseHandler#0" />
             <element signature="method#storeNewAddress#0;class#DatabaseHandler#0" />
             <element signature="method#getContactKey#0;class#DatabaseHandler#0" />
+            <element signature="method#deleteElement#0;class#DatabaseHandler#0" />
             <element signature="method#deleteContact#0;class#DatabaseHandler#0" />
+            <element signature="method#deleteAddress#0;class#DatabaseHandler#0" />
+            <element signature="method#addRelation#0;class#DatabaseHandler#0" />
+            <element signature="method#deleteRelation#0;class#DatabaseHandler#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyGUIForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="79" column="10" selection-start-line="79" selection-start-column="10" selection-end-line="79" selection-end-column="10" />
+        <state relative-caret-position="170">
+          <caret line="236" column="11" lean-forward="true" selection-start-line="236" selection-start-column="11" selection-end-line="236" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#3986:4454" />
@@ -445,18 +463,14 @@
             <element signature="class#7527:7665" />
             <element signature="class#8156:8294" />
             <element signature="class#8581:8719" />
-            <element signature="class#8876:9064" />
-            <element signature="e#9467#9468#0" expanded="true" />
-            <element signature="e#9548#9549#0" expanded="true" />
             <element signature="class#9125:9263" />
+            <element signature="class#11298:11436" />
+            <element signature="class#11649:11787" />
             <element signature="e#10463#10464#0" expanded="true" />
             <element signature="e#10495#10496#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyGUIForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">

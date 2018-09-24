@@ -43,6 +43,14 @@ public class MyGUIForm {
     private JButton deleteEmailAddressButton;
     private JButton deletePhoneNumberButton;
     private JPanel outputAreaPanel;
+    private JButton addRelationButton;
+    private JTextField relationID_1_textField;
+    private JTextField relationTypeTextField;
+    private JTextField relationID_2_textField;
+    private JTextField isContactWithIDTextField;
+    private JTextField contactWithIDTextField;
+    private JTextField sTextField;
+    private JButton deleteRelationButton;
     private JTextPane outputTextPane;
 
 
@@ -62,10 +70,16 @@ public class MyGUIForm {
         TextPrompt phoneIDPrompt = new TextPrompt("To ID", phoneUserIDTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt addresIDPrompt = new TextPrompt("To ID", addresUserIDTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt addressTypePrompt = new TextPrompt("Type (Private/Work etc.)", addressTypeTextField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt contact1Propmt = new TextPrompt("Contact ID", relationID_1_textField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt contact2Propmt = new TextPrompt("Contact ID", relationID_2_textField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt contact3Propmt = new TextPrompt("Relation", relationTypeTextField, TextPrompt.Show.FOCUS_LOST);
 
         //Set borders
         userInfoTextField.setBorder(null);
         userInfoTextField_2.setBorder(null);
+        contactWithIDTextField.setBorder(null);
+        isContactWithIDTextField.setBorder(null);
+        sTextField.setBorder(null);
 
 
         //Create compound border around output area
@@ -197,12 +211,6 @@ public class MyGUIForm {
         deleteAddressButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String input = elementToDeleteTextField.getText();
-            }
-        });
-        deleteAddressButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
                 String streetAddress = "'" + streetAddressTextField.getText() + "'";
                 String postalCode = "'" + postalCodeTextField.getText() + "'";
                 String city = "'" + cityTextField.getText() + "'";
@@ -212,6 +220,31 @@ public class MyGUIForm {
                         + streetAddressTextField.getText() + " " + postalCodeTextField.getText()
                         + " " + cityTextField.getText()
                         + "'  deleted for Contact ID: "+id+ " has been deleted.");
+            }
+        });
+
+        //Add relation
+        addRelationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_1 = Integer.parseInt(relationID_1_textField.getText());
+                int id_2 = Integer.parseInt(relationID_2_textField.getText());
+
+                String relation = relationTypeTextField.getText();
+                dbHandler.addRelation(id_1,id_2,relation);
+                JOptionPane.showMessageDialog(null, "Relation added!");
+            }
+        });
+
+        //Delete relation
+        deleteRelationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int id_1 = Integer.parseInt(relationID_1_textField.getText());
+                int id_2 = Integer.parseInt(relationID_2_textField.getText());
+                String relation = relationTypeTextField.getText();
+                dbHandler.deleteRelation(id_1,id_2,relation);
+                JOptionPane.showMessageDialog(null, "Relation deleted!");
             }
         });
     }

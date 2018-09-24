@@ -281,19 +281,6 @@ public class DatabaseHandler {
         }
     }
 
-    public void deleteAddress(String streetAddress, String postalCode, String city, int id){
-
-        String sql = "DELETE FROM Street_addresses WHERE StreetAddress =  "+streetAddress+" AND postalCode = " + postalCode + " AND City = " + city + " AND ContactID = " + id;
-
-        try (Connection conn = DriverManager.getConnection(url);
-             PreparedStatement pstmt = conn.prepareStatement(sql)){
-            pstmt.executeUpdate();
-
-        }catch(SQLException e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
     //Delete contact
     public void deleteContact(int contactID){
         String sql = "DELETE FROM Contacts  WHERE ContactID = " + contactID;
@@ -345,6 +332,51 @@ public class DatabaseHandler {
     }
 
     //Delete address
+    public void deleteAddress(String streetAddress, String postalCode, String city, int id){
+
+        String sql = "DELETE FROM Street_addresses WHERE StreetAddress =  "+streetAddress+" AND postalCode = " + postalCode + " AND City = " + city + " AND ContactID = " + id;
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Add relations
+    public void addRelation(int id_1, int id_2, String relation){
+        String tableSql = "INSERT INTO " + "Relations(ContactID_1,ContactID_2,relationType) VALUES(?,?,?)";
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(tableSql)) {
+
+            //Prepare the number table statement:
+            pstmt.setInt(1, id_1);
+            pstmt.setInt(2,id_2);
+            pstmt.setString(3, relation);
+
+            //Execute the table updates
+            pstmt.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Delete relations
+    public void deleteRelation(int id_1, int id_2, String relation){
+        String sql = "DELETE FROM Relations WHERE ContactID_1 =  "+id_1+" AND ContactID_2 = " + id_2 + " AND relationType = " + relation;
+
+        try (Connection conn = DriverManager.getConnection(url);
+             PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.executeUpdate();
+
+        }catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
 
 }
