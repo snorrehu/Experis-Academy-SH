@@ -17,6 +17,8 @@ public class MyGUIForm {
     private JTextField postalCodeTextField;
     private JTextField cityTextField;
     private JTextField userInfoTextField;
+    private JTextField userIDInputTextField;
+    private JTextField elementToDeleteTextField;
 
     //Text Areas
     private JTextArea outputTextArea;
@@ -29,7 +31,10 @@ public class MyGUIForm {
     private JButton addAddressButton;
     private JButton searchForContactButton;
     private JPanel outputAreaPanel;
+    private JButton deleteContactButton;
 
+    private JButton deleteElementButton;
+    private JTextField userInfoTextField_2;
 
 
     public MyGUIForm(){
@@ -41,8 +46,11 @@ public class MyGUIForm {
         TextPrompt streetAddressPrompt = new TextPrompt("Street Address", streetAddressTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt postalCodePrompt = new TextPrompt("Postal Code", postalCodeTextField, TextPrompt.Show.FOCUS_LOST);
         TextPrompt cityPrompt = new TextPrompt("City", cityTextField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt idPrompt = new TextPrompt("User ID", userIDInputTextField, TextPrompt.Show.FOCUS_LOST);
+        TextPrompt deletePromt = new TextPrompt("Element to delete", elementToDeleteTextField, TextPrompt.Show.FOCUS_LOST);
 
         userInfoTextField.setBorder(null);
+        userInfoTextField_2.setBorder(null);
         //Create compound border around output area
 
         Border raisedbevel = BorderFactory.createRaisedBevelBorder();

@@ -55,7 +55,7 @@ public class Main extends MyGUIForm{
         JFrame frame = new JFrame("Contact Book");
         frame.setContentPane(new MyGUIForm().getPanelMain());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(600, 430));
+        frame.setPreferredSize(new Dimension(690, 500));
         frame.pack();
         frame.setVisible(true);
     }
