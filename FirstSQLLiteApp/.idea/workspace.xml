@@ -7,29 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b61734-c1a8-4b7f-8477-49fb35869ecf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/FirstSQLLiteApp_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Contacts.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/Contacts.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Northwind_small.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/DatabaseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/DatabaseHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/FirstSQLLiteApp/MyGUIForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyGUIForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyGUIForm.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyGUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyGUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,11 +54,12 @@
     <session id="1403701259">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -112,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="221">
               <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,20 +103,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="65" lean-forward="true" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+            <state relative-caret-position="153">
+              <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="n#IF#0" />
-                <element signature="n#IF#0" />
-                <element signature="n#IF#0" />
-                <element signature="n#IF#0" />
                 <element signature="method#contactQueery#0;class#DatabaseHandler#0" />
                 <element signature="method#insertNewContact#0;class#DatabaseHandler#0" />
                 <element signature="method#storeNewInfo#0;class#DatabaseHandler#0" />
                 <element signature="method#storeNewAddress#0;class#DatabaseHandler#0" />
                 <element signature="method#getContactKey#0;class#DatabaseHandler#0" />
-                <element signature="method#getContactName#0;class#DatabaseHandler#0" />
                 <element signature="method#deleteElement#0;class#DatabaseHandler#0" />
                 <element signature="method#deleteContact#0;class#DatabaseHandler#0" />
                 <element signature="method#deleteAddress#0;class#DatabaseHandler#0" />
@@ -149,27 +123,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MyGUIForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="81" column="44" lean-forward="true" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
+            <state relative-caret-position="1258">
+              <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#5185:5730" />
-                <element signature="class#4908:5577" />
-                <element signature="class#5284:5451" />
-                <element signature="e#6656#6657#0" expanded="true" />
-                <element signature="e#6716#6717#0" expanded="true" />
-                <element signature="class#5535:6048" />
-                <element signature="method#actionPerformed#0;class#5535:6048" />
-                <element signature="class#6130:6662" />
-                <element signature="class#6735:7387" />
-                <element signature="class#7527:7665" />
-                <element signature="class#8156:8294" />
-                <element signature="class#8581:8719" />
-                <element signature="class#9125:9263" />
-                <element signature="class#11298:11436" />
-                <element signature="class#11649:11787" />
-                <element signature="e#12246#12247#0" expanded="true" />
-                <element signature="e#12278#12279#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -228,38 +185,13 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FirstSQLLiteApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstSQLLiteApp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstSQLLiteApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstSQLLiteApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstSQLLiteApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstSQLLiteApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="MyGUIForm" type="e9f4de52:FormNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537821464451" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DataVisualisationWebsite" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -309,11 +241,12 @@
       <workItem from="1537716195802" duration="429000" />
       <workItem from="1537716796319" duration="8524000" />
       <workItem from="1537732739520" duration="33925000" />
+      <workItem from="1537947356701" duration="40000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77898000" />
+    <option name="totallyTimeSpent" value="77938000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -414,51 +347,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TextPrompt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#changeAlpha#1;class#TextPrompt#0" />
-            <element signature="e#3414#3415#0" expanded="true" />
-            <element signature="e#3441#3442#0" expanded="true" />
-            <element signature="method#checkForPrompt#0;class#TextPrompt#0" />
-            <element signature="method#focusLost#0;class#TextPrompt#0" />
-            <element signature="e#5960#5961#0" expanded="true" />
-            <element signature="e#5992#5993#0" expanded="true" />
-            <element signature="method#changedUpdate#0;class#TextPrompt#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyGUIForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="81" column="44" lean-forward="true" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#5185:5730" />
-            <element signature="class#4908:5577" />
-            <element signature="class#5284:5451" />
-            <element signature="e#6656#6657#0" expanded="true" />
-            <element signature="e#6716#6717#0" expanded="true" />
-            <element signature="class#5535:6048" />
-            <element signature="method#actionPerformed#0;class#5535:6048" />
-            <element signature="class#6130:6662" />
-            <element signature="class#6735:7387" />
-            <element signature="class#7527:7665" />
-            <element signature="class#8156:8294" />
-            <element signature="class#8581:8719" />
-            <element signature="class#9125:9263" />
-            <element signature="class#11298:11436" />
-            <element signature="class#11649:11787" />
-            <element signature="e#12246#12247#0" expanded="true" />
-            <element signature="e#12278#12279#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-256" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="221">
           <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -468,23 +362,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="65" lean-forward="true" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
+        <state relative-caret-position="153">
+          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="n#IF#0" />
-            <element signature="n#IF#0" />
-            <element signature="n#IF#0" />
-            <element signature="n#IF#0" />
             <element signature="method#contactQueery#0;class#DatabaseHandler#0" />
             <element signature="method#insertNewContact#0;class#DatabaseHandler#0" />
             <element signature="method#storeNewInfo#0;class#DatabaseHandler#0" />
             <element signature="method#storeNewAddress#0;class#DatabaseHandler#0" />
             <element signature="method#getContactKey#0;class#DatabaseHandler#0" />
-            <element signature="method#getContactName#0;class#DatabaseHandler#0" />
             <element signature="method#deleteElement#0;class#DatabaseHandler#0" />
             <element signature="method#deleteContact#0;class#DatabaseHandler#0" />
             <element signature="method#deleteAddress#0;class#DatabaseHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyGUIForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
